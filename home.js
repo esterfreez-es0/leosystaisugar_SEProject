@@ -29,9 +29,14 @@ const restartBtn = document.getElementById('restart-btn');
 const btns = document.querySelectorAll('.controls .btn');
 const currentNumSpan = document.getElementById('current-num');
 const totalNumSpan = document.getElementById('total-num');
+const btnSafe = document.getElementById('btnsafe');
+const btnUnsafe = document.getElementById('btnunsafe');
 
 totalNumSpan.innerText = questions.length;
 loadQuestion(currentIdx);
+
+btnSafe.addEventListener('click', () => checkAnswer('safe'));
+btnUnsafe.addEventListener('click', () => checkAnswer('unsafe'));
 
 function loadQuestion(index) {
     const data = questions[index];
@@ -53,7 +58,7 @@ function loadQuestion(index) {
 
     imgQ.src = data.q;
     // 圖片載入本身需要一點時間，這裡為了體驗可以保留 timeout
-    // setTimeout(() => { imgA.src = data.a; }, 200);
+    setTimeout(() => { imgA.src = data.a; }, 200);
 
     currentNumSpan.innerText = index + 1;
 }
