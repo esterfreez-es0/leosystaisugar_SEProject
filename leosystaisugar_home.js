@@ -89,9 +89,9 @@ function checkAnswer(userChoice) {
     }
 
     // 自動捲動一點點，確保手機版用戶能看到跳出來的回饋 (選用)
-    // setTimeout(() => {
-    //   feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    // }, 300);
+    setTimeout(() => {
+        feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 300);
 
     if (currentIdx === questions.length - 1) {
         nextBtn.innerText = "完成演練 🏁";
